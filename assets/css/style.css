@@ -15,6 +15,52 @@ html {
     clear: both;
 }
 
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-full {
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.col-half {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.col-third {
+    width: 33.333333%;
+}
+
+.padding-32 {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.row.padding-32 {
+    display: flex;
+    justify-content: center;
+}
+
 #main {}
 
 #header {
@@ -100,6 +146,7 @@ html {
 #header .search-btn:hover {
     background-color: #f44336;
     cursor: pointer;
+    display: block;
 }
 
 #slider {
@@ -131,20 +178,23 @@ html {
 }
 
 #content {
-    height: 3000px;
+    /* height: 3000px; */
 }
 
 #content .conten-section {
     width: 800px;
-    padding: 64px 16px;
+    padding-top: 64px;
+    padding: 0px 16px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 64px;
+    margin-bottom: 64px;
 }
 
 #content .section-heading {
     font-family: "Segoe UI", Arial, sans-serif;
     font-size: 30px;
-    margin: 10px 0;
+    padding: 10px 0;
     letter-spacing: 4px;
     font-weight: 400;
 }
@@ -193,4 +243,293 @@ html {
 
 }
 
-#footer {}
+#content .tour-section {
+    background-color: #000;
+    padding-bottom: 64px;
+    padding-top: 1px;
+
+}
+
+#content .tour-section .ticket-list {
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+#content .tour-section li {
+    font-size: 15px;
+    color: #757575;
+    padding: 11px 16px;
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+}
+
+#content .tour-section .sold-out {
+    color: #fff;
+    background-color: #f44336;
+    margin-left: 16px;
+    padding: 3px 7px;
+}
+
+#content .tour-section .quantity {
+    float: right;
+    margin-right: 16px;
+    background-color: #000;
+    color: #fff;
+    padding: 3px 8px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+#content .place-list {
+    width: 816px;
+    display: block;
+    padding: 32px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content .place-item {
+    float: left;
+    width: 33.333333%;
+    box-sizing: border-box;
+    padding: 0 8px;
+    margin-bottom: 16px;
+}
+
+
+#content .place-list .place-img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+#content .place-list .place-img:hover {
+    opacity: 0.6;
+}
+
+#content .place-list .place-body {
+    background-color: #fff;
+    padding: 0.01em 16px;
+}
+
+#content .place-list .place-heading {
+    font-size: 15px;
+    margin-top: 15px;
+
+}
+
+#content .place-list .place-opacity {
+    font-size: 15px;
+    opacity: 0.60;
+    margin-top: 15px;
+}
+
+#content .place-list .place-content {
+    font-size: 15px;
+    margin-top: 15px;
+    line-height: 1.4;
+
+}
+
+#content .place-list .place-button {
+    font-size: 15px;
+    margin: 15px 0;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+}
+
+#content .place-list .place-button:hover {
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.row.padding-32>.col.col-half {
+    margin: 0 0 16px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.col.col-half i {
+    margin-right: 16px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ccc;
+}
+
+.col.col-full {
+    margin-top: 9px;
+}
+
+.button-send {
+    float: right;
+    font-size: 15px;
+    margin: 16px 0;
+    padding: 9px 13px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+}
+
+.button-send:hover {
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+
+
+
+.model {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.model.open {
+    display: flex;
+}
+
+.model-table {
+    background-color: #fff;
+    width: 900px;
+    max-width: calc(100% -32px);
+    min-height: 200px;
+    position: relative;
+    animation: modelface ease 0.5s;
+}
+
+.model-tickets {
+    letter-spacing: 4px;
+    display: flex;
+    background-color: #009688;
+    justify-content: center;
+    padding: 47px 0;
+    font-size: 30px;
+    color: #fff;
+}
+
+.ti-bag {
+    margin-right: 11px;
+}
+
+.heading.ti-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px;
+}
+
+.heading.ti-close:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+
+.model-mid {
+    padding: 0 26px;
+    font-size: 15px;
+}
+
+.model-buy {
+    margin: 15px 0;
+}
+
+.model-input {
+    border: 1px solid #ccc;
+    /* display: list-item; */
+    padding: 8px 0 8px 8px;
+    width: 100%;
+}
+
+.model-button {
+    /* display: flex; */
+    width: 100%;
+    /* justify-content: center; */
+    /* padding-right: 7px; */
+    margin: 16px 0;
+    padding: 16px 5px;
+    border: none;
+    background-color: #009688;
+    font-weight: 600;
+    color: #fff;
+    font-size: 15px;
+}
+
+.model-button:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.model-closes {
+    font-size: 15px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    margin: 16px 0;
+}
+
+.model-closes:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.model-help {
+    float: right;
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+@keyframes modelface {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+
+    }
+}
+
+.map-section .imgmap {
+    width: 100%;
+}
+
+#footer {
+    font-size: 24px;
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .icon-footer a {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+#footer .medium a:hover,
+#footer .icon-footer a:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#footer .medium {
+    font-size: 15px;
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .medium a {
+    color: rgba(0, 0, 0, 0.6);
+}

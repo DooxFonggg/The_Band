@@ -79,11 +79,50 @@
             <!-- end: The Band -->
 
             <!-- begin: TOUR DATES -->
-            <div class="conten-section">
-                <h2 class="section-heading">TOUR DATES</h2>
-                <p class="section-sub-heading">Remember to book your tickets!</p>
-
-
+            <div class="tour-section">
+                <div class="conten-section">
+                    <h2 class="section-heading text-white">TOUR DATES</h2>
+                    <p class="section-sub-heading text-white">Remember to book your tickets!</p>
+                    <ul class="ticket-list">
+                        <li>September<span class="sold-out">Sold out</span></li>
+                        <li>October <span class="sold-out">Sold out</span></li>
+                        <li>November <span class="quantity">3</span></li>
+                    </ul>
+                </div>
+                <div class="place-list">
+                    <div class="place-item">
+                        <img src="./assets/img/place/place1.jpg" alt="" class="place-img">
+                        <div class="place-body">
+                            <h3 class="place-heading">New York</h3>
+                            <p class="place-opacity">Fri 27 Nov 2016</p>
+                            <p class="place-content">Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+                            </p>
+                            <button class="place-button js-buy-tickets">Buy Tickets</button>
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <img src="./assets/img/place/place2.jpg" alt="" class="place-img">
+                        <div class="place-body">
+                            <h3 class="place-heading">Paris</h3>
+                            <p class="place-opacity">Sat 28 Nov 2016</p>
+                            <p class="place-content">Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+                            </p>
+                            <button class="place-button js-buy-tickets">Buy Tickets</button>
+                        </div>
+                    </div>
+                    <div class="place-item">
+                        <img src="./assets/img/place/place3.jpg" alt="" class="place-img">
+                        <div class="place-body">
+                            <h3 class="place-heading">San Francisco</h3>
+                            <p class="place-opacity">Sun 29 Nov 2016</p>
+                            <p class="place-content">Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+                            </p>
+                            <button class="place-button js-buy-tickets">Buy Tickets</button>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
             </div>
             <!-- end: TOUR DATES -->
 
@@ -91,16 +130,121 @@
             <div class="conten-section">
                 <h2 class="section-heading">CONTACT</h2>
                 <p class="section-sub-heading">Fan? Drop a note!</p>
+                <div class="row padding-32">
+                    <div class="col col-half">
+                        <p><i class="ti-location-pin"></i>Chicago, US</p>
+                        <p><i class="ti-mobile"></i> Phone: +00 151515</p>
+                        <p><i class="ti-email"></i> Email: mail@mail.com</p>
+                    </div>
+                    <div class="col col-half">
+                        <div class="row">
+                            <div class="col col-half">
+                                <input type="Name" placeholder="Name" required class="form-control">
+                            </div>
+                            <div class="col col-half">
+                                <input type="Email" placeholder="Email" required class="form-control">
+                            </div>
 
+                        </div>
+                        <div class="row">
+                            <div class="col col-full">
+                                <input type="Text" placeholder="Message" required class="form-control">
+
+                            </div>
+
+                        </div>
+                        <button class="button-send" type="submit">SEND</button>
+                    </div>
+
+                </div>
             </div>
             <!-- end: contant -->
+
+            <!-- begin: map -->
+            <div class="map-section">
+                <img src="./assets/img/map/map.jpg" alt="" class="img-map">
+            </div>
+            <!-- end: map -->
         </div>
-
+        <!-- begin footer -->
         <div id="footer">
+            <div class="icon-footer">
+                <a href=""><i class="ti-facebook"></i></a>
+                <a href=""><i class="ti-instagram"></i></a>
+                <a href=""><i class="ti-youtube"></i></a>
+                <a href=""><i class="ti-pinterest"></i></a>
+                <a href=""><i class="ti-twitter-alt"></i></a>
+                <a href=""><i class="ti-linkedin"></i></a>
 
+            </div>
+            <p class="medium">Powered by <a href="https://www.w3schools.com/w3css/tryw3css_templates_band.htm"
+                    class="">w3.css</a></p>
+        </div>
+        <!-- end: footer -->
+    </div>
+    <div class="model js-model ">
+        <div class="model-table js-model-table">
+
+            <div class="model-close">
+                <div class="heading ti-close js-close"></div>
+                <h2 class="model-tickets">
+                    <i class="ti-bag"></i>
+                    Tickets
+                </h2>
+            </div>
+            <div class="model-mid">
+                <div class="model-body">
+                    <div class="model-buy">
+                        <i class="ti-shopping-cart"></i>
+                        Tickets, $15 per person
+                    </div>
+                    <input type="text" class="model-input" placeholder="How many ?">
+                </div>
+
+                <div class="model-body">
+                    <div class="model-buy">
+                        <i class="ti-user"></i>
+                        Send To
+                    </div>
+                    <input type="text" class="model-input" placeholder="Enter email">
+                </div>
+                <button class="model-button">
+                    PAY
+                    <i class="ti-check"></i>
+                </button>
+                <button class="model-closes js-close">
+                    Close
+                    <i class="ti-close"></i>
+                </button>
+                <p class="model-help">
+                    Need
+                    <a href="#" class="help-text">help?</a>
+                </p>
+            </div>
         </div>
     </div>
+    <script>
+        const buyBtns = document.querySelectorAll('.js-buy-tickets')
+        const model = document.querySelector('.js-model');
+        const modelCloses = document.querySelectorAll('.js-close')
+        const modelTable = document.querySelector('.js-model-table')
+        showBuyTicket = () => {
+            model.classList.add('open');
+        }
 
+        removeBuyTicket = () => {
+            model.classList.remove('open');
+        }
+
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTicket)
+        }
+        for (const modelClose of modelCloses) {
+            modelClose.addEventListener('click', removeBuyTicket)
+        }
+        model.addEventListener('click', removeBuyTicket)
+        modelTable.addEventListener('click', (event) => { event.stopPropagation() })
+    </script>
 </body>
 
 </html>
